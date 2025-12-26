@@ -27,7 +27,7 @@ rviz
 ```bash
 python3 scripts/kuka_point_aruco42.py
 ```
-![alt text](VID_20251226_170456_068.mp4)
+![alt text](https://github.com/RanDoLife/Kuka_capture-point_implementation/blob/4f6b2946f6848b1d98e7d44ca20a8c356393f853/VID_20251226_170456_068.mp4)
 
 ## Тестирование программ в симуляции
 
