@@ -27,7 +27,7 @@ rviz
 ```bash
 python3 scripts/kuka_point_aruco42.py
 ```
-![alt text(VID_20251226_170456_068.mp4)
+![alt text](VID_20251226_170456_068.mp4)
 
 ## Тестирование программ в симуляции
 
