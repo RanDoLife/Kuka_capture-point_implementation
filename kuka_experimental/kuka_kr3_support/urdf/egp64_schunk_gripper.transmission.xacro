@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="egp64_schunk_gripper_transmission" params="prefix">
+
+    <transmission name="egp64_left_finger_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="egp64_finger_left_joint">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="egp64_left_finger_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="egp64_right_finger_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="egp64_finger_right_joint">
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="egp64_right_finger_motor">
+          <mechanicalReduction>1</mechanicalReduction>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>  
+<!--       
+    <transmission name="robotiq_85_left_knuckle_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="robotiq_85_left_knuckle_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+        <!-- <hardwareInterface>EffortJointInterface</hardwareInterface> -->
+      <!-- </joint>
+      <actuator name="robotiq_85_left_knuckle_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface> -->
+        <!-- <hardwareInterface>EfforJointInterface</hardwareInterface> -->
+      <!-- </actuator>
+   </transmission> -->
+
+  </xacro:macro>
+
+</robot>

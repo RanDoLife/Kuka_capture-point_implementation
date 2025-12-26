@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro"
+       name="kuka_kr3" >
+
+  <xacro:arg name="transmission_hw_interface" default="hardware_interface/PositionJointInterface" />
+  <!-- EffortJointInterface PositionJointInterface"/> -->
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find kuka_resources)/urdf/common_materials.xacro" />
+
+  <!-- kuka_kr3 -->
+  <xacro:include filename="$(find kuka_kr3_support)/urdf/kuka_kr3.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:kuka_kr3_robot prefix="" 
+  transmission_hw_interface="$(arg transmission_hw_interface)"
+  />
+
+  <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+ <link name="drawing_map"/>
+ <joint name="drawing_map_joint" type="fixed">
+  <parent link="world"/>
+  <child link="drawing_map"/>
+  <!-- <origin rpy="0 0 -3.141592653589793" xyz="0.35 0.35 0.05"/> -->
+  <!-- flomaster <origin rpy="0 0 -3.141592653589793" xyz="0.38856 0.2923 0.33215"/> -->
+  <!-- <origin rpy="0 0 -3.141592653589793" xyz="0.341282475345403 0.13478026770254103 0.35810056046137945"/> -->
+  <!-- <origin rpy="0 0 -3.141592653589793" xyz="0.3615957783802989 0.23805288948548103 0.3437954788337281"/> first x +1,25 y -2cm -->
+  <origin rpy="0 0 -3.141592653589793" xyz="0.3615957783802989 -0.04283858261491812 0.3437954788337281"/>
+<!--
+position: 
+  x: 0.3739558718861825
+  y: -0.04283858261491812
+  z: 0.3370156659659315
+orientation: 
+  x: -0.016741798132295236
+  y: 0.9990444675884409
+  z: -0.002786324105424981
+  w: 0.04027530725153584
+
+
+position: 
+  x: 0.3739634844648302
+  y: -0.0428515385374345
+  z: 0.34690801136509575
+orientation: 
+  x: -0.017403626622181603
+  y: 0.9990448913645452
+  z: -0.0019435242342432395
+  w: 0.04003300553731498-->
+<!-- x: 0.3711992461035527
+  y: 0.24806473065976178
+  z: 0.3112154574401996
+   start_pose.position.x=0.30071660687983925
+        start_pose.position.y=0.0025758259837072956
+        start_pose.position.z=0.2761175640162776
+        start_pose.orientation.x=0.2761175640162776
+        start_pose.orientation.y=-0.9998935921938651
+        start_pose.orientation.z=0.0006534605474507399
+        start_pose.orientation.w=0.013591955664511487
+        position: 
+  x: 0.3315957783802989
+  y: 0.23805288948548103
+  z: 0.3437954788337281
+orientation: 
+  x: 0.0017760452021532967
+  y: -0.9960184158656332
+  z: 0.038243627081209104
+  w: 0.08050829713531231 -->
+</joint>
+</robot>

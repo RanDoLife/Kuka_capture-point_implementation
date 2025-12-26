@@ -1,0 +1,25 @@
+{
+  "name": "ROS1 Noetic (Stable)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/root/ros1_ws",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/root/ros1_ws/src,type=bind"
+  ],
+  "extensions": [
+    "ms-iot.vscode-ros",
+    "ms-python.python",
+    "ms-vscode.cpptools"
+  ],
+  "runArgs": [
+    "--net=host",
+    "--ipc=host",
+    "--device=/dev/bus/usb", //for basler
+    "--privileged",
+    "-e", "DISPLAY=${env:DISPLAY}",
+    "-e", "QT_X11_NO_MITSHM=1",
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
+  ],
+  "postCreateCommand": "cd /root/ros1_ws"
+}

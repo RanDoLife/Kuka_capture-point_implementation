@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<robot name="kuka_kr3r540" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:include filename="$(find kuka_kr3_support)/urdf/base/kr3r540_macro.xacro"/>
+  <xacro:kuka_kr3r540 prefix=""/>
+  
+  <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+
+  <!-- <link name="map"/>
+  <joint name="map_joint" type="fixed">
+    <parent link="world"/>
+    <child link="map"/>-->
+    <!-- <origin rpy="0 0 -3.141592653589793" xyz="0.35 0.35 0.05"/> -->
+    <!-- flomaster <origin rpy="0 0 -3.141592653589793" xyz="0.38856 0.2923 0.33215"/> -->
+    <!-- <origin rpy="0 0 -3.141592653589793" xyz="0.341282475345403 0.13478026770254103 0.35810056046137945"/> -->
+  <!-- </joint> -->
+
+</robot>
